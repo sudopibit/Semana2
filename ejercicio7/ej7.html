@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ejercicio 7 Bootstrap Example</title>
+    <link
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    rel="stylesheet"
+    />
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+      }
+      .btn-back {
+        font-size: 1.2rem;
+        padding: 0.5rem 1.5rem;
+      }
+    </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <div class="container text-center">
+
+      <form class="formulario-validacion" novalidate>
+        <div class="form-row">
+
+          <div class="col-md-6 mb-3">
+            <label for="nombre">Nombre</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nombre"
+              required
+            />
+            <div class="invalid-feedback">Por favor, ingresa tu nombre.</div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label for="apellido">Apellido</label>
+            <input
+              type="text"
+              class="form-control"
+              id="apellido"
+              required
+            />
+            <div class="invalid-feedback">Por favor, ingresa tu apellido.</div>
+          </div>
+        </div>
+
+        <div class="form-row">
+
+          <div class="col-md-6 mb-3">
+            <label for="contrasena">Contraseña</label>
+            <input
+              type="password"
+              class="form-control"
+              id="contrasena"
+              required
+            />
+            <div class="invalid-feedback">La contraseña es obligatoria.</div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label for="repetirContrasena">Repetir Contraseña</label>
+            <input
+              type="password"
+              class="form-control"
+              id="repetirContrasena"
+              required
+            />
+            <div class="invalid-feedback">Por favor, repite la contraseña.</div>
+          </div>
+        </div>
+
+        <div class="form-row">
+
+          <div class="col-md-6 mb-3">
+            <label for="usuario">Nombre de usuario</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend">@</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                id="usuario"
+                aria-describedby="inputGroupPrepend"
+                required
+              />
+              <div class="invalid-feedback">El nombre de usuario es obligatorio.</div>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label for="pais">País</label>
+            <select class="custom-select" id="pais" required>
+              <option value="">Seleccionar...</option>
+              <option value="España">España</option>
+              <option value="Francia">Francia</option>
+              <option value="Alemania">Alemania</option>
+              <option value="Italia">Italia</option>
+              <option value="Portugal">Portugal</option>
+            </select>
+            <div class="invalid-feedback">Selecciona un país.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="terminos"
+              required
+            />
+            <label class="form-check-label" for="terminos">
+              Acepto los términos y condiciones
+            </label>
+            <div class="invalid-feedback">Debes aceptar los términos antes de enviar.</div>
+          </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Enviar formulario</button>
+      </form>
+    </div>
+    <a href="../index.html" class="btn btn-secondary btn-back mt-3">Volver</a>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var formulario = document.querySelector(".formulario-validacion");
+
+        formulario.addEventListener("submit", function (evento) {
+          if (!formulario.checkValidity()) {
+            evento.preventDefault();
+            evento.stopPropagation();
+          }
+          formulario.classList.add("was-validated");
+        });
+      });
+    </script>
+
+  </body>
+</html>

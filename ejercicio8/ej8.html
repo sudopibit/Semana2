@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 8 - Votaciones en gráfico</title>
+    <link
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    rel="stylesheet"
+    />
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+      }
+      .btn-back {
+        font-size: 1.2rem;
+        padding: 0.5rem 1.5rem;
+      }
+    </style>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js">
+    </script>
+  </head>
+  <body>
+    <div class="container text-center mt-5">
+      <h1>Votaciones</h1>
+      <div class="my-4">
+        <button type="button" class="btn btn-outline-primary" onclick="vote(0)">Socialistas</button>
+        <button type="button" class="btn btn-outline-primary" onclick="vote(1)">Liberales</button>
+        <button type="button" class="btn btn-outline-primary" onclick="vote(2)">Animalistas</button>
+        <button type="button" class="btn btn-outline-primary" onclick="vote(3)">Centristas</button>
+        <button type="button" class="btn btn-outline-primary" onclick="vote(4)">Ecologistas</button>
+        <button type="button" class="btn btn-outline-danger" onclick="resetVotes()">Reset</button>
+      </div>
+      <canvas id="votingChart" width="400" height="400"></canvas>
+    </div>
+    <script src="ej8.js"></script>
+    <a href="../index.html" class="btn btn-secondary btn-back mt-3">Volver</a>
+  </body>
+</html>

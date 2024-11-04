@@ -1,0 +1,12 @@
+.additional {
+  font-size: 16px;
+  color: #657687;
+}
+
+.additional.hidden {
+  display: none;
+}
+
+.additional.visible {
+  display: inline;
+}
